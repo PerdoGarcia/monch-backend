@@ -48,14 +48,10 @@ def food_query(query):
             nutrients_lst = data['foods'][0]['foodNutrients']
 
             protein = nutrients_lst[0]['value']
-            protein = str(protein) + servingSizeUnit
             fats = nutrients_lst[1]['value']
-            fats = str(fats) + nutrients_lst[1]['unitName']
             carbs = nutrients_lst[2]['value']
-            carbs = str(carbs) + nutrients_lst[2]['unitName']
             Cals = nutrients_lst[3]['value']
-            Cals = str(Cals) + nutrients_lst[3]['unitName']
-            return {'ingredient': q,
+            return {'name': q,
                     'protein': protein, 'fats': fats,
                     'carbs': carbs, 'calories': Cals}
         except:
